@@ -1,0 +1,20 @@
+import pandas as pd
+import matplotlib.pyplot as plt
+
+# Load the iris dataset
+df = pd.read_csv('iris.csv')
+
+# Analyze the 'species' column for different flower types
+flower_counts = df['species'].value_counts()
+
+# Create a pie chart to visualize the distribution of flower types
+plt.figure(figsize=(8, 8))
+plt.pie(flower_counts, labels=flower_counts.index, autopct='%1.1f%%', startangle=140)
+
+# Set the title of the plot
+plt.title('Distribution of Flower Types in Iris Dataset')
+
+# Save the plot as 'output.png'
+plt.savefig('output.png')
+
+print("The graph has been created and saved as output.png")

@@ -1,0 +1,22 @@
+import pandas as pd
+import matplotlib.pyplot as plt
+
+# Load the iris dataset
+data = pd.read_csv('iris.csv')
+
+# Check the unique values in the species/type column
+flower_types = data['species'].value_counts()
+
+# Create a bar plot for the types of flowers
+plt.figure(figsize=(10, 6))
+flower_types.plot(kind='bar', color='skyblue')
+plt.title('Types of Flowers in Iris Dataset')
+plt.xlabel('Flower Types')
+plt.ylabel('Frequency')
+plt.xticks(rotation=45)
+plt.grid(axis='y')
+
+# Save the figure
+plt.savefig('output.png')
+
+print("Graph of types of flowers created successfully and saved as output.png.")
